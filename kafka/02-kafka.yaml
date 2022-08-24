@@ -38,6 +38,9 @@ spec:
               value: PLAINTEXT://:9092
             - name: KAFKA_ADVERTISED_LISTENERS
               value: PLAINTEXT://localhost:9092
+            # https://docs.confluent.io/platform/current/installation/docker/config-reference.html
+            - name: KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR
+              value: "1"
           image: confluentinc/cp-kafka:7.0.5
           imagePullPolicy: IfNotPresent
           name: kafka-broker
